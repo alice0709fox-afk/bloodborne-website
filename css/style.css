@@ -2870,3 +2870,55 @@ body .copyright-footer p:last-child {
     color: #999 !important
     font-style: italic !important;
 }
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px !important;
+        padding: 10px !important;
+    }
+    
+    .hunter-figure, .doll-figure {
+        display: none !important;
+    }
+    
+    .page-footer .footer-content {
+        flex-direction: column !important;
+        text-align: center !important;
+    }
+    
+    .footer-info {
+        margin-bottom: 15px !important;
+    }
+    
+    .footer-info span {
+        display: block !important;
+        margin: 5px 0 !important;
+    }
+    
+    /* Уменьшим размеры для мобильных */
+    h1 { font-size: 24px !important; }
+    h2 { font-size: 20px !important; }
+    h3 { font-size: 18px !important; }
+    
+    /* Улучшим отступы */
+    .container, .main-content {
+        padding: 10px !important;
+        margin: 0 auto !important;
+        max-width: 100% !important;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 12px !important;
+    }
+    
+    h1 { font-size: 20px !important; }
+    h2 { font-size: 18px !important; }
+    
+    /* Скрываем сложные элементы на очень маленьких экранах */
+    .complex-animations {
+        display: none !important;
+    }
+}
