@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Боссы Bloodborne - Полный список</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/боссы.css">
+</head>
+<body class="bosses-page">
+    <!-- ХЕДЕР -->
+    <div class="header-top">
+        <div class="logo-container">
+            <a href="bloodborn.html" class="logo-link">
+                <img src="https://cdn2.steamgriddb.com/icon_thumb/9f69833b3238a664bd7825dcdaaa37f3.png" alt="Логотип" class="logo">
+                <img src="https://www.seekpng.com/png/full/89-895941_bloodborne.png" alt="Bloodborne" class="title-logo">
+            </a>
+        </div>
+        
+        <div class="menu-container">
+            <select onchange="if(this.value) window.open(this.value, '_blank'); this.selectedIndex = 0;" class="menu-select">
+                <option value="">Разработчик</option>
+                <option value="https://www.fromsoftware.jp/ww/">FromSoftware</option>
+                <option value="https://www.sie.com/">Sony Interactive Entertainment</option>
+                <option value="https://ru.wikipedia.org/wiki/Bloodborne">Дата выхода: 24 марта 2015</option>
+                <option value="https://ru.wikipedia.org/wiki/Bloodborne">Платформа: PlayStation 4</option>
+            </select>
+            
+            <select onchange="if(this.value) window.location.href=this.value;" class="menu-select">
+                <option value="">О игре</option>
+                <option value="сюжет.html">Сюжет</option>
+                <option value="персонажи.html">Персонажи</option>
+                <option value="оружие.html">Оружие</option>
+                <option value="локации.html">Локации</option>
+                <option value="боссы.html">Боссы</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- ОСНОВНОЙ КОНТЕНТ -->
+    <div class="bosses-container">
+        <h1 class="bosses-title">Энциклопедия Боссов Bloodborne</h1>
+        <p class="bosses-subtitle">Полный список всех противников, встречающихся на пути охотника</p>
+
+        <!-- ФИЛЬТРЫ -->
+        <div class="boss-filters">
+            <button class="filter-btn active" data-filter="all">Все боссы</button>
+            <button class="filter-btn" data-filter="main">Основные</button>
+            <button class="filter-btn" data-filter="optional">Второстепенные</button>
+            <button class="filter-btn" data-filter="dlc">The Old Hunters</button>
+            <button class="filter-btn" data-filter="chalice">Подземелья чаш</button>
+        </div>
+        <!-- Добавляем после фильтров и перед таблицами -->
+<div class="filter-stats">
+ Всего боссов: <span class="count" id="bossCount">0</span> 
+</div>
+
+<div class="no-results" id="noResults">
+    🎮 Боссы не найдены. Попробуйте другой фильтр.
+</div>
+
+<div class="filter-loading" id="filterLoading">
+    🔄 Загрузка...
+</div>
+
+                <!-- ТАБЛИЦЫ БОССОВ -->
+        
+        <!-- Основные обязательные боссы -->
+        <table class="boss-table main">
+            <caption>Основная игра. Обязательные боссы</caption>
+            <thead>
+                <tr>
+                    <th>Английское название</th>
+                    <th>Русское название</th>
+                    <th>Локация</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Father Gascoigne</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Отец Гаскойн</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Центральный Ярнам</td>
+                </tr>
+                <tr>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Vicar Amelia</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Викарий Амелия</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Соборный округ</td>
+                </tr>
+                <tr>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Shadow of Yharnam</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Тень Ярнама</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Запретный лес</td>
+                </tr>
+                <tr>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Rom</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Ром, праздный паук</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Бюргенверт</td>
+                </tr>
+                <tr>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Reborn</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Возродившийся</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Яаар'гул, духовная деревня</td>
+                </tr>
+                <tr>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Micolash</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Миколаш, Хозяин кошмара</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Кошмар Менсиса</td>
+                </tr>
+                <tr>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Wet Nurse</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Кормилица Мерго</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Кошмар Менсиса</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Второстепенные боссы -->
+        <table class="boss-table optional">
+            <caption>Основная игра. Второстепенные боссы</caption>
+            <thead>
+                <tr>
+                    <th>Английское название</th>
+                    <th>Русское название</th>
+                    <th>Локация</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Cleric Beast</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Церковное Чудовище</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Центральный Ярнам</td>
+                </tr>
+                <tr>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Emissary</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Посланник Небес</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Верхний Соборный округ</td>
+                </tr>
+                <tr>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Ebrietas</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Ибраитас, дочь Космоса</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Верхний Соборный округ</td>
+                </tr>
+                <tr>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Blood-starved Beast</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Чудовище-кровоглот</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Старый Ярнам</td>
+                </tr>
+                <tr>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Paarl</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Черное чудовище Паарл</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Яаар'гул, духовная деревня</td>
+                </tr>
+                <tr>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Witch of Hemwick</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Ведьма Хемвика</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Молельный переулок Хемвик</td>
+                </tr>
+                <tr>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Martyr Logarius</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Мученик Логариус</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Покинутый замок Кейнхёрст</td>
+                </tr>
+                <tr>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Amygdala</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Амигдала</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Граница кошмара</td>
+                </tr>
+                <tr>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Gehrman</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Герман, первый охотник</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Сон охотника</td>
+                </tr>
+                <tr>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Moon Presence</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Присутствие луны</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Сон охотника</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- DLC боссы -->
+        <table class="boss-table dlc">
+            <caption>Дополнение The Old Hunters</caption>
+            <thead>
+                <tr>
+                    <th>Английское название</th>
+                    <th>Русское название</th>
+                    <th>Локация</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Ludwig</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Людвиг</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Кошмар охотника</td>
+                </tr>
+                <tr>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Laurence</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Лоуренс, первый викарий</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Кошмар охотника</td>
+                </tr>
+                <tr>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Living Failures</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Живые неудачи</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Зал исследований</td>
+                </tr>
+                <tr>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Maria</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Леди Мария из Астральной часовой башни</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Зал исследований</td>
+                </tr>
+                <tr>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Orphan of Kos</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Сирота Кос</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Рыбацкая деревня</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Подземелья чаш -->
+        <table class="boss-table chalice">
+            <caption>Подземелье чаши - Область Птумеру</caption>
+            <thead>
+                <tr>
+                    <th>Босс</th>
+                    <th>Локация в чашах</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Мертвый гигант</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Чаша Птумеру, Нижняя Чаша Птумеру, Чаша Дальней Гробницы</td>
+                </tr>
+                <tr>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Беспощадные Хранители</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Чаша Птумеру, Нижняя Чаша Птумеру</td>
+                </tr>
+                <tr>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Сторожевой пес Древних Богов</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Чаша Птумеру, Проклятая и оскверненная Чаша</td>
+                </tr>
+                <tr>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Душа, одержимая чудовищем</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Центральная Чаша Птумеру, Чаша Больного Лорана</td>
+                </tr>
+                <tr>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Хранитель Древних Богов</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Центральная Чаша Птумеру, Проклятая и оскверненная Чаша</td>
+                </tr>
+                <tr>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Потомок птумериан</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Центральная Чаша Птумеру, Великая Чаша Птумеру Айилл</td>
+                </tr>
+                <tr>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Ром, праздный паук</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Нижняя Чаша Птумеру</td>
+                </tr>
+                <tr>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Чудовище-кровопуск</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Нижняя Чаша Птумеру, Великая Чаша Птумеру Айилл</td>
+                </tr>
+                <tr>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Амигдала</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Проклятая и оскверненная Чаша</td>
+                </tr>
+                <tr>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Ярнам, Птумерианская королева</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Великая Чаша Птумеру Айилл</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Дополнительные таблицы подземелий -->
+        <table class="boss-table chalice">
+            <caption>Подземелье чаши - Область дальних гробниц</caption>
+            <thead>
+                <tr>
+                    <th>Босс</th>
+                    <th>Локация в чашах</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Вепрь-людоед</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Чаша Дальней Гробницы</td>
+                </tr>
+                <tr>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Чудовище-кровоглот</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Чаша Дальней Гробницы, Чаша Больного Лорана</td>
+                </tr>
+                <tr>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Мозгосос</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Нижняя Чаша Дальней Гробницы, Чаша Великого Исза</td>
+                </tr>
+                <tr>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Забытый безумец</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Нижняя Чаша Дальней Гробницы</td>
+                </tr>
+                <tr>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Птумерианский Старейшина</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Нижняя Чаша Дальней Гробницы</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="boss-table chalice">
+            <caption>Подземелье чаши - Область Лорана</caption>
+            <thead>
+                <tr>
+                    <th>Босс</th>
+                    <th>Локация в чашах</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Чудовище-кровоглот</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Чаша Больного Лорана</td>
+                </tr>
+                <tr>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Отвратительное чудовище</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Чаша Больного Лорана, Чаша Нижнего Лорана</td>
+                </tr>
+                <tr>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Серебряное чудовище Лорана</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Чаша Нижнего Лорана, Чаша Больного Лорана</td>
+                </tr>
+                <tr>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Черное чудовище Лорана</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Чаша Нижнего Лорана</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="boss-table chalice">
+            <caption>Подземелье чаши - Область Исза</caption>
+            <thead>
+                <tr>
+                    <th>Босс</th>
+                    <th>Локация в чашах</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Мозгосос</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Нижняя Чаша Дальней Гробницы, Чаша Великого Исза</td>
+                </tr>
+                <tr>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Посланник Небес</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Чаша Великого Исза</td>
+                </tr>
+                <tr>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Ибраитас, дочь Космоса</td>
+                    <td><img src="https://avatars.mds.yandex.net/i?id=c0c0d021943546178084773e0a2c6340_l-12325594-images-thumbs&n=13" alt="Лого" class="table-icon">Чаша Великого Исза</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+     <!-- Footer с красной оконтовкой -->
+    <footer class="page-footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <span>Разработчик: FromSoftware</span>
+                <span>Год выпуска: 2015</span>
+                <span>Платформа: PlayStation 4</span>
+                <span>Жанр: Action/RPG, Хоррор</span>
+            </div>
+            <img src="https://cdn2.steamgriddb.com/icon_thumb/9f69833b3238a664bd7825dcdaaa37f3.png" alt="Логотип Bloodborne" class="footer-logo">
+        </div>
+    </footer>
+    
+    <!-- ФИГУРКА ОХОТНИКА СЛЕВА - КАК БЫЛО -->
+    <div class="hunter-figure pulse">
+        <img src="images\охотник.png" 
+             alt="Охотник Bloodborne">
+    </div>
+
+    <!-- ФИГУРКА КУКЛЫ СПРАВА - С ЧЕРНЫМ ФОНОМ -->
+    <div class="doll-figure pulse">
+        <img src="images/кукла.png" 
+             alt="Кукла Bloodborne">
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

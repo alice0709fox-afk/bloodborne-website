@@ -1,0 +1,227 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Персонажи - Bloodborne</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="characters-page" data-page="characters">
+    <!-- ХЕДЕР С ЛОГО СЛЕВА И МЕНЮ СПРАВА -->
+    <div class="header-top">
+        <!-- Логотип слева -->
+        <div class="logo-container">
+            <a href="bloodborn.html" class="logo-link">
+                <img src="https://cdn2.steamgriddb.com/icon_thumb/9f69833b3238a664bd7825dcdaaa37f3.png" alt="Логотип" class="logo">
+                <img src="https://www.seekpng.com/png/full/89-895941_bloodborne.png" alt="Bloodborne" class="title-logo">
+            </a>
+        </div>
+        
+        <!-- Меню справа -->
+        <div class="menu-container">
+            <!-- Меню "Разработчик" -->
+            <select onchange="if(this.value) window.open(this.value, '_blank'); this.selectedIndex = 0;" class="menu-select">
+                <option value="">Разработчик</option>
+                <option value="https://www.fromsoftware.jp/ww/">FromSoftware</option>
+                <option value="https://www.sie.com/">Sony Interactive Entertainment</option>
+                <option value="https://ru.wikipedia.org/wiki/Bloodborne">Дата выхода: 24 марта 2015</option>
+                <option value="https://ru.wikipedia.org/wiki/Bloodborne">Платформа: PlayStation 4</option>
+            </select>
+            
+            <!-- Меню "О игре" -->
+            <select onchange="if(this.value) window.location.href=this.value;" class="menu-select">
+                <option value="">О игре</option>
+                <option value="сюжет.html">Сюжет</option>
+                <option value="персонажи.html">Персонажи</option>
+                <option value="оружие.html">Оружие</option>
+                <option value="локации.html">Локации</option>
+                <option value="боссы.html">боссы</option>
+            </select>
+        </div>
+    </div>
+
+   <!-- Новая шапка с отдельным изображением и текстом -->
+<header class="characters-header">
+    <div class="header-content">
+        <div class="header-text">
+            <h1>Главные персонажи игры</h1>
+            <p>Персонажи - встреченные личности в игре Bloodborne, которые общаются с игроком, взаимодействуют через выдачу или принятие предметов, рассказывают о мире.</p>
+            <p>Просто враждебные внутриигровые персонажи, которые никак не взаимодействуют с игроком - в статье Враждебные охотники. Доступные для призыва союзники, без возможности взаимодействия с ними, - в статье Призываемые охотники.</p>
+        </div>
+        <div class="header-image-container">
+            <img src="https://avatars.mds.yandex.net/i?id=d2aa6c86cc74cd8860a3beaf79cb31e1_l-9245081-images-thumbs&n=13" alt="Охотник">
+        </div>
+    </div>
+</header>
+
+    <!-- Основное содержимое -->
+    <main class="characters-main">
+        <!-- Второй заголовок -->
+        <div class="section-title">
+            <h2>Основные и второстепенные персонажи</h2>
+        </div>
+
+        <!-- Первый ряд - 5 картинок с названиями -->
+        <div class="characters-row">
+            <div class="character-item">
+                <details class="character-details">
+                    <summary class="character-summary">
+                        <img src="https://avatars.mds.yandex.net/i?id=791fb2ee2f241f14ab072b18f78382cf_l-5283209-images-thumbs&n=13" alt="Кровослужитель" class="character-image">
+                    </summary>
+                    <div class="character-description">
+                        Загадочный персонаж, с которым Протагонист заключает контракт на переливание ярнамской крови, после чего протагонист видит вылезающего из лужи крови Ликантропа и множество посланников. Больше Протагонист этого персонажа не встречает.
+                    </div>
+                </details>
+                <div class="character-name">Кровослужитель</div>
+            </div>
+
+            <div class="character-item">
+                <details class="character-details">
+                    <summary class="character-summary">
+                        <img src="https://avatars.mds.yandex.net/i?id=3bd4a1fb20a67af5eed8890ee84ebebf_l-5252076-images-thumbs&n=13" alt="Кукла" class="character-image">
+                    </summary>
+                    <div class="character-description">
+                        При первом посещении Сна охотника можно будет обнаружить хрупкую фарфоровую куклу, не отвечающую ни на какие действия игрока, стеклянные глаза которой направлены на Луну, но после того как игрок получит одно очко озарения, она оживёт. Кукла дружелюбная, спокойная и нежная. Она выражает искреннюю любовь и глубокое уважение к своему создателю — человеку.
+                        В локации Старая заброшенная мастерская находится настоящая Кукла. Она неподвижно сидит в углу и не реагирует ни на какие действия.
+                        Прототипом Куклы является Мария, ученица Германа.
+                    </div>
+                </details>
+                <div class="character-name">Кукла</div>
+            </div>
+
+            <div class="character-item">
+                <details class="character-details">
+                    <summary class="character-summary">
+                        <img src="https://i.pinimg.com/originals/ee/90/7b/ee907bdefeb62f8cd7e3a9a8747dfed8.png" alt="Самаритянин часовни" class="character-image">
+                    </summary>
+                    <div class="character-description">
+                        Мирный житель Ярнама, который делает все возможное, чтобы спасти своих соотечественников от Бедствия. Его можно легко принять за пожилую женщину или врага, но оба утверждения будут неверны.
+                        Самаритянин слеп. Это также можно понять при первой встрече, когда он говорит, что узнал игрока по запаху охотника. Самаритянин носит сосуд для ладана, как ожерелье.
+                        Вы встретите его в часовне Идон после пересечения канализационных сетей Центрального Ярнама, после чего он сообщит вам, что часовня безопасна от чудовищ и просит поделиться этой информацией с любыми выжившими, которых вы встретите.
+                    </div>
+                </details>
+                <div class="character-name">Саморитянин часовни</div>
+            </div>
+
+            <div class="character-item">
+                <details class="character-details">
+                    <summary class="character-summary">
+                        <img src="https://files.vgtimes.ru/gallery/thumb/136407/gehrman_1426607869.webp" alt="Герман. первый охотник" class="character-image">
+                    </summary>
+                    <div class="character-description">
+                        Первый охотник. НПС, который даёт протагонисту наводки на следующую цель.
+                        Знаком с Лоуренсом. Если Герман отсутствует в доме, то он может спать в саду, что позади здания и где находятся Посланники пня. При попытке с ним поговорить он бормочет во сне следующие фразы: "О, Лоуренс... Почему ты так долго... Я стал слишком стар для такого. Боюсь, теперь я мало чем могу быть полезен".
+                        Является финальным боссом игры, но только для одной концовки.
+                    </div>
+                </details>
+                <div class="character-name">Герман. Первый охотник</div>
+            </div>
+
+            <div class="character-item">
+                <details class="character-details">
+                    <summary class="character-summary">
+                        <img src="https://i.pinimg.com/736x/be/bc/64/bebc64b0c627c3b9d5c59276241d80c5.jpg" alt="Мастер Виллем" class="character-image">
+                    </summary>
+                    <div class="character-description">
+                        Мастер Виллем - глава института Бюргенверт, от которого берет начало Церковь Исцеления и Хор. Он и его ученики первыми изучили древнюю кровь, найденную в лабирантах под Ярнамом.
+                        Сейчас, едва живой, Мастер Виллем сидит на балконе, глядя на озеро, в которое помещена Ром
+                    </div>
+                </details>
+                <div class="character-name">Мастер Виллем</div>
+            </div>
+        </div>
+
+        <!-- Второй ряд - 5 картинок с названиями -->
+        <div class="characters-row">
+            <div class="character-item">
+                <details class="character-details">
+                    <summary class="character-summary">
+                        <img src="https://i.pinimg.com/originals/75/ee/f6/75eef6460342e36b889f6a4680b4326e.png" alt="Йозефка" class="character-image">
+                    </summary>
+                    <div class="character-description">
+                        Истинная Йозефка появляется в игре всего один раз. После того как игрок посетит локацию «Соборный округ», ее заменит самозванка, которая трансформирует настоящую Йозефку в Малого посланника Небес. Это доказывается именным пузырьком крови, который можно взять с трупа посланника.
+                        В отличие от самозванки, Йозефка очень любезная, умная и вежливая.
+                    </div>
+                </details>
+                <div class="character-name">Йозефка</div>
+            </div>
+
+            <div class="character-item">
+                <details class="character-details">
+                    <summary class="character-summary">
+                        <img src="https://i.pinimg.com/736x/e7/e3/d7/e7e3d74fd8db6e377383a9370140d2fd.jpg" alt="Айлин Ворона" class="character-image">
+                    </summary>
+                    <div class="character-description">
+                        Айлин - убийца, чья обязанность - распоряжаться судьбами других охотников, которые развратились в погоне за кровью. Как и игрок, она родом из-за пределов Ярнама и является тут иностранцем, но ее присутствие в городе обусловлено совершенно другим набором мотивов. Ее стиль - быть незаметной и держаться в тени, вы никогда не встретитесь с ней просто так, только если уйдете с пути, исследуя мир. 
+                        Вы можете начать ее поиски либо в Центральном Ярнаме, либо слева от входа в передней части часовни Идон в Соборном Округе, и тем самым вы повлияете на ее судьбу.
+                    </div>
+                </details>
+                <div class="character-name">Айлин Ворона</div>
+            </div>
+
+            <div class="character-item">
+                <details class="character-details">
+                    <summary class="character-summary">
+                        <img src="https://i.playground.ru/p/R2vKV_dhyZm96TmFaMwKxg.jpeg" alt="Альфред, охотник на Нечистокровных" class="character-image">
+                    </summary>
+                    <div class="character-description">
+                        Альфред, охотник на Нечистокровных (англ. Alfred, Hunter of Vilebloods) - персонаж в игре Bloodborne. В Палачах он последный из ковенанта. Формально - простой охотник, но в игровом процессе выступает в качестве лидера ковенанта.
+                    </div>
+                </details>
+                <div class="character-name">Альфред, охотник на Нечистокровных</div>
+            </div>
+
+            <div class="character-item">
+                <details class="character-details">
+                    <summary class="character-summary">
+                        <img src="https://i.playground.ru/i/pix/2602241/image.jpg" alt="Проститутка Арианна" class="character-image">
+                    </summary>
+                    <div class="character-description">
+                        Арианну можно найти на улице с Подозрительным стариком и тремя другими NPC, углубившись в Соборный округ. Ей можно рассказать о Часовне Идон или о Лечебнице Йозефки (после того как вы убьете одного из трёх боссов: Амелию, кровоглота или Ведьму Хемвика). Если рассказать ей о Часовне Идон, вы найдете её там, сидящей слева от фонаря. При разговоре она поблагодарит вас и предложит свою кровь.
+                        После убийства Ром и восхода красной луны, Арианна забеременеет Великим и перестанет давать свою кровь, ссылаясь на недомогание.
+                    </div>
+                </details>
+                <div class="character-name">Проститутка Арианна</div>
+            </div>
+
+            <div class="character-item">
+                <details class="character-details">
+                    <summary class="character-summary">
+                        <img src="https://i.playground.ru/p/QmrYpbGb2s751CHJ_7xhFw.jpeg" alt="Вальтер, старый охотник" class="character-image">
+                    </summary>
+                    <div class="character-description">
+                        Вальтер является лидером ковенанта Лига. Ковенант основан с целью помогать другим охотникам в их мирах и искать и давить Паразитов, символ человеческой скверны. Вальтер одет в Сет констебля и вооружен Пилой-вертушкой.
+                        Помешан на уничтожении Паразитов, однако сам перестал их видеть очень давно, что следует из описания его шлема.
+                    </div>
+                </details>
+                <div class="character-name">Вальтер, старый охотник</div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="page-footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <span>Разработчик: FromSoftware</span>
+                <span>Год выпуска: 2015</span>
+                <span>Платформа: PlayStation 4</span>
+                <span>Жанр: Action/RPG, Хоррор</span>
+            </div>
+            <img src="https://cdn2.steamgriddb.com/icon_thumb/9f69833b3238a664bd7825dcdaaa37f3.png" alt="Логотип Bloodborne" class="footer-logo">
+        </div>
+    </footer>
+       <!-- ФИГУРКА ОХОТНИКА СЛЕВА - КАК БЫЛО -->
+    <div class="hunter-figure pulse">
+        <img src="images\охотник.png" 
+             alt="Охотник Bloodborne">
+    </div>
+
+    <!-- ФИГУРКА КУКЛЫ СПРАВА - С ЧЕРНЫМ ФОНОМ -->
+    <div class="doll-figure pulse">
+        <img src="images\кукла.png" 
+             alt="Кукла Bloodborne">
+    </div>
+<script src="js/script.js"></script>
+
+</body>
+</html>

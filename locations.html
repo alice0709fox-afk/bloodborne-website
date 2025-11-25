@@ -1,0 +1,308 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Локации - Bloodborne</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="locations-page" data-page="locations">
+    
+    <!-- ХЕДЕР С ЛОГО СЛЕВА И МЕНЮ СПРАВА -->
+    <div class="header-top">
+        <!-- Логотип слева -->
+        <div class="logo-container">
+            <a href="bloodborn.html" class="logo-link">
+                <img src="https://cdn2.steamgriddb.com/icon_thumb/9f69833b3238a664bd7825dcdaaa37f3.png" alt="Логотип" class="logo">
+                <img src="https://www.seekpng.com/png/full/89-895941_bloodborne.png" alt="Bloodborne" class="title-logo">
+            </a>
+        </div>
+        
+        <!-- Меню справа -->
+        <div class="menu-container">
+            <!-- Меню "Разработчик" -->
+            <select onchange="if(this.value) window.open(this.value, '_blank'); this.selectedIndex = 0;" class="menu-select">
+                <option value="">Разработчик</option>
+                <option value="https://www.fromsoftware.jp/ww/">FromSoftware</option>
+                <option value="https://www.sie.com/">Sony Interactive Entertainment</option>
+                <option value="https://ru.wikipedia.org/wiki/Bloodborne">Дата выхода: 24 марта 2015</option>
+                <option value="https://ru.wikipedia.org/wiki/Bloodborne">Платформа: PlayStation 4</option>
+            </select>
+            
+            <!-- Меню "О игре" -->
+            <select onchange="if(this.value) window.location.href=this.value;" class="menu-select">
+                <option value="">О игре</option>
+                <option value="сюжет.html">Сюжет</option>
+                <option value="персонажи.html">Персонажи</option>
+                <option value="оружие.html">Оружие</option>
+                <option value="локации.html">Локации</option>
+                <option value="боссы.html">боссы</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Шапка с текстом и изображением -->
+    <header class="locations-header">
+        <div class="header-content">
+            <div class="header-text">
+                <h1>Локации Bloodborne</h1>
+                <p>Исследуйте мрачные и загадочные уголки города Ярнам и его окрестностей. Каждая локация хранит свои тайны и опасности.</p>
+            </div>
+            <div class="header-image-container">
+                <img src="https://avatars.mds.yandex.net/i?id=da579957e0255638fd8699e260fb41e7_l-3979623-images-thumbs&n=13" alt="Охотник в Ярнаме">
+            </div>
+        </div>
+    </header>
+
+    <!-- Основное содержимое -->
+    <main class="locations-main">
+        <div class="section-title">
+            <h2>Основные локации Ярнама</h2>
+        </div>
+
+        <!-- Сетка локаций -->
+        <div class="locations-grid">
+            <!-- Локация 1 -->
+            <div class="location-card">
+                <div class="location-image">
+                    <img src="https://i.pinimg.com/originals/51/19/39/511939070878bad977246899663ceedd.jpg" alt="Центральный Ярнам">
+                </div>
+                <div class="location-info">
+                    <h3>Центральный Ярнам</h3>
+                    <p>Начальная локация игры. Узкие улочки, заполненные обезумевшими горожанами и зверями. Здесь начинается путешествие охотника.</p>
+                    <div class="location-features">
+                        <span class="feature">🏚️ Улицы города</span>
+                        <span class="feature">🎭 Первый босс</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Локация 2 -->
+            <div class="location-card">
+                <div class="location-image">
+                    <img src="https://landofgames.ru/uploads/posts/2020-06/1591552732_sobornyy-okrug.jpg" alt="Соборный округ">
+                </div>
+                <div class="location-info">
+                    <h3>Соборный округ</h3>
+                    <p>Религиозный центр Ярнама с величественным собором. Здесь обитают более сильные враги и церковные служители.</p>
+                    <div class="location-features">
+                        <span class="feature">⛪ Собор</span>
+                        <span class="feature">🙏 Церковные враги</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Локация 3 -->
+            <div class="location-card">
+                <div class="location-image">
+                    <img src="https://i.pinimg.com/originals/e2/71/42/e271421674bdfe99bc36389f3232be0e.png" alt="Старый Ярнам">
+                </div>
+                <div class="location-info">
+                    <h3>Старый Ярнам</h3>
+                    <p>Заброшенная часть города, уничтоженная чумой зверей. Находится под постоянным ядовитым дождем.</p>
+                    <div class="location-features">
+                        <span class="feature">☠️ Ядовитая зона</span>
+                        <span class="feature">🧟 Заразившиеся</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Локация 4 -->
+            <div class="location-card">
+                <div class="location-image">
+                    <img src="https://landofgames.ru/uploads/posts/2020-06/1591552648_granica-koshmara-1.jpg" alt="Граница кошмара">
+                </div>
+                <div class="location-info">
+                    <h3>Граница кошмара</h3>
+                    <p>Сюрреалистичная локация, где реальность искажается. Обитель Амигдлы и других Великих существ.</p>
+                    <div class="location-features">
+                        <span class="feature">🌌 Сюрреализм</span>
+                        <span class="feature">👁️ Великие существа</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Локация 5 -->
+            <div class="location-card">
+                <div class="location-image">
+                    <img src="https://landofgames.ru/uploads/posts/2020-06/1591552733_granica-koshmara-2.jpg" alt="Граница кошмара 2">
+                </div>
+                <div class="location-info">
+                    <h3>Лес кошмара</h3>
+                    <p>Заброшенная лесная зона с ядовитыми озерами и гигантскими змеями. Ведет к Бюргенверту.</p>
+                    <div class="location-features">
+                        <span class="feature">🌳 Лес</span>
+                        <span class="feature">🐍 Гигантские змеи</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Локация 6 -->
+            <div class="location-card">
+                <div class="location-image">
+                    <img src="https://landofgames.ru/uploads/posts/2020-06/1591552714_pokinutyy-zamok-keynherst.jpg" alt="Замок Каинхерст">
+                </div>
+                <div class="location-info">
+                    <h3>Замок Каинхерст</h3>
+                    <p>Вампирский замок, дом королевы Анализ. Обитель рыцарей Каинхерста и кровавой королевы.</p>
+                    <div class="location-features">
+                        <span class="feature">🏰 Замок</span>
+                        <span class="feature">🦇 Вампиры</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Локация 7 -->
+            <div class="location-card">
+                <div class="location-image">
+                    <img src="https://landofgames.ru/uploads/posts/2020-06/1591552737_podzemnaya-tyurma.jpg" alt="Подземная тюрьма">
+                </div>
+                <div class="location-info">
+                    <h3>Подземная тюрьма</h3>
+                    <p>Глубокие катакомбы под Ярнамом. Место заключения самых опасных существ и безумных охотников.</p>
+                    <div class="location-features">
+                        <span class="feature">⛓️ Тюрьма</span>
+                        <span class="feature">😵 Безумные охотники</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Локация 8 -->
+            <div class="location-card">
+                <div class="location-image">
+                    <img src="https://landofgames.ru/uploads/posts/2020-06/1591552720_byurgenvert.jpg" alt="Бюргенверт">
+                </div>
+                <div class="location-info">
+                    <h3>Бюргенверт</h3>
+                    <p>Заброшенный колледж, где изучали Великих. Место проведения запретных экспериментов и исследований.</p>
+                    <div class="location-features">
+                        <span class="feature">🏫 Колледж</span>
+                        <span class="feature">🔬 Исследования</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Локация 9 -->
+            <div class="location-card">
+                <div class="location-image">
+                    <img src="https://landofgames.ru/uploads/posts/2020-06/1591552728_staraya-zabroshennaya-masterskaya-i-masterskaya-cerkvi-isceleniya.jpg" alt="Мастерская">
+                </div>
+                <div class="location-info">
+                    <h3>Мастерская Охотника</h3>
+                    <p>Безопасное убежище охотника. Здесь можно улучшать оружие, создавать предметы и отдыхать у костра.</p>
+                    <div class="location-features">
+                        <span class="feature">🛡️ Убежище</span>
+                        <span class="feature">⚒️ Крафтинг</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Локация 10 -->
+            <div class="location-card">
+                <div class="location-image">
+                    <img src="https://landofgames.ru/uploads/posts/2020-06/1591552656_molelnyy-pereulok-hemvik.jpg" alt="Хемвик">
+                </div>
+                <div class="location-info">
+                    <h3>Молельный переулок Хемвик</h3>
+                    <p>Заброшенная деревня, где практиковали темные ритуалы. Обитель ведьм и их приспешников.</p>
+                    <div class="location-features">
+                        <span class="feature">🏘️ Деревня</span>
+                        <span class="feature">🧙 Ведьмы</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Локация 11 -->
+            <div class="location-card">
+                <div class="location-image">
+                    <img src="https://landofgames.ru/uploads/posts/2020-06/1591552734_yaaargul-duhovnaya-derevnya-1.jpg" alt="Я'аргул 1">
+                </div>
+                <div class="location-info">
+                    <h3>Я'аргул - Духовная деревня</h3>
+                    <p>Деревня, посвященная культу Великих. Место, где реальность начинает рушиться под влиянием космических сил.</p>
+                    <div class="location-features">
+                        <span class="feature">🌠 Космическое влияние</span>
+                        <span class="feature">👥 Культисты</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Локация 12 -->
+            <div class="location-card">
+                <div class="location-image">
+                    <img src="https://landofgames.ru/uploads/posts/2020-06/1591552733_yaaargul-duhovnaya-derevnya-2.jpg" alt="Я'аргул 2">
+                </div>
+                <div class="location-info">
+                    <h3>Невидимая деревня Я'аргул</h3>
+                    <p>Альтернативная версия деревни, появляющаяся после убийства Ромы. Полностью преображенная космическими силами.</p>
+                    <div class="location-features">
+                        <span class="feature">🌀 Альтернативная реальность</span>
+                        <span class="feature">💫 Космические враги</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Общая карта -->
+        <div class="full-map-section">
+            <div class="section-title">
+                <h2>Общая карта мира</h2>
+            </div>
+            <div class="full-map-container">
+                <img src="https://i.pinimg.com/originals/19/80/14/19801437fb0686039b8610a3e4434b4c.jpg" alt="Общая карта Bloodborne" class="full-map-image">
+                <div class="map-overlay">
+                    <div class="map-legend">
+                        <h4>Легенда карты</h4>
+                        <div class="legend-items">
+                            <div class="legend-item">
+                                <span class="legend-color" style="background: #8B0000;"></span>
+                                <span>Основные локации</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color" style="background: #4B0082;"></span>
+                                <span>Зоны кошмаров</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color" style="background: #006400;"></span>
+                                <span>Лесные области</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color" style="background: #2F4F4F;"></span>
+                                <span>Подземные зоны</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer с красной оконтовкой -->
+    <footer class="page-footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <span>Разработчик: FromSoftware</span>
+                <span>Год выпуска: 2015</span>
+                <span>Платформа: PlayStation 4</span>
+                <span>Жанр: Action/RPG, Хоррор</span>
+            </div>
+            <img src="https://cdn2.steamgriddb.com/icon_thumb/9f69833b3238a664bd7825dcdaaa37f3.png" alt="Логотип Bloodborne" class="footer-logo">
+        </div>
+    </footer>
+        <!-- ФИГУРКА ОХОТНИКА СЛЕВА - КАК БЫЛО -->
+    <div class="hunter-figure pulse">
+        <img src="images\охотник.png" 
+             alt="Охотник Bloodborne">
+    </div>
+
+    <!-- ФИГУРКА КУКЛЫ СПРАВА - С ЧЕРНЫМ ФОНОМ -->
+    <div class="doll-figure pulse">
+        <img src="images\кукла.png" 
+             alt="Кукла Bloodborne">
+    </div>
+
+    <!-- Кнопка скролла наверх -->
+    <button class="scroll-top-btn">↑</button>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,2811 @@
+/* ОСНОВНЫЕ СТИЛИ СТРАНИЦЫ */
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("https://sub-game.ru/upload/resize_cache/iblock/736/1200_1200_140cd750bba9870f18aada2478b24840a/ef4yb5lpgz8fkv3nckb13ou4s3pm1ku4.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-x: hidden;
+    padding-top: 70px;
+}
+
+/* ХЕДЕР */
+.header-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: rgba(10, 0, 0, 0.95);
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(139, 0, 0, 0.5);
+    border-bottom: 2px solid #8B0000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.header-top::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #8B0000, #ff0000, #8B0000);
+    animation: bloodGlow 2s ease-in-out infinite;
+}
+
+@keyframes bloodGlow {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; }
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.logo { 
+    height: 40px; 
+    margin-right: 15px; 
+}
+
+.title-logo { 
+    height: 25px; 
+}
+
+.logo-link { 
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.menu-container {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.menu-select {
+    font-size: 14px;
+    padding: 8px 16px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #ff6b6b;
+    border: 1px solid #8B0000;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    text-decoration: none;
+    white-space: nowrap;
+    min-width: 140px;
+}
+
+.menu-select:hover {
+    background: rgba(139, 0, 0, 0.4);
+    border-color: #ff0000;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
+}
+
+.menu-select option {
+    background: rgba(0, 0, 0, 0.9);
+    color: #ff6b6b;
+    padding: 8px;
+}
+
+/* ФОНОВЫЕ ЭФФЕКТЫ */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(139, 0, 0, 0.3) 0%, transparent 25%),
+        radial-gradient(circle at 80% 70%, rgba(178, 34, 34, 0.25) 0%, transparent 25%),
+        radial-gradient(circle at 40% 80%, rgba(165, 42, 42, 0.2) 0%, transparent 20%);
+    animation: pulseBlood 8s ease-in-out infinite;
+    z-index: -2;
+    pointer-events: none;
+}
+
+@keyframes pulseBlood {
+    0%, 100% { 
+        opacity: 0.6;
+        transform: scale(1);
+    }
+    50% { 
+        opacity: 0.8;
+        transform: scale(1.02);
+    }
+}
+
+.blood-drops {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.blood-drop {
+    position: absolute;
+    background: linear-gradient(45deg, #8B0000, #FF0000);
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(45deg);
+    animation: fallDown linear forwards;
+    opacity: 0.7;
+    filter: blur(0.5px);
+}
+
+@keyframes fallDown {
+    0% {
+        transform: translateY(-100px) rotate(45deg) scale(0.3);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.7;
+    }
+    90% {
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(100vh) rotate(45deg) scale(1);
+        opacity: 0;
+    }
+}
+
+.fog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, 
+        rgba(20, 20, 20, 0.1) 0%, 
+        rgba(50, 50, 50, 0.05) 50%, 
+        rgba(20, 20, 20, 0.1) 100%);
+    animation: fogMovement 25s ease-in-out infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes fogMovement {
+    0%, 100% { 
+        transform: translateX(0px) translateY(0px);
+        opacity: 0.3;
+    }
+    25% { 
+        transform: translateX(-15px) translateY(8px);
+        opacity: 0.5;
+    }
+    50% { 
+        transform: translateX(12px) translateY(-12px);
+        opacity: 0.4;
+    }
+    75% { 
+        transform: translateX(15px) translateY(6px);
+        opacity: 0.6;
+    }
+}
+
+/* ФОНОВЫЕ ИЗОБРАЖЕНИЯ ДЛЯ РАЗНЫХ СТРАНИЦ */
+.weapons-page { background-image: url("https://avatars.mds.yandex.net/i?id=dc769dde8312a228dbc3204d9726a785_l-5243585-images-thumbs&n=13"); }
+.characters-page { background-image: url("https://i.pinimg.com/originals/35/34/ee/3534ee08de8ff03746e44c658b4c60d3.jpg"); }
+.story-page { background-image: url("https://wallpapers.com/images/hd/bloodborne-central-yharnam-79r91tt1l513vquv.jpg"); }
+.locations-page { background-image: url("https://i.pinimg.com/originals/34/37/07/34370765e59282b617dd1fa13aed82d7.jpg"); }
+
+/* ОБЩИЕ СТИЛИ КОНТЕНТА */
+.header-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    padding: 20px;
+}
+
+.header-image img { max-width: 60%; height: auto; }
+
+.main-header, .weapons-header, .characters-header, .story-header, .locations-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.header-content, .story-header-content {
+    display: flex;
+    align-items: center;
+    background: rgba(0,0,0,0.7);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #c00;
+    margin: 0 auto;
+    max-width: 1200px;
+    width: calc(100% - 40px);
+}
+
+.story-header-content {
+    margin-bottom: 40px;
+}
+
+.header-text {
+    flex: 1;
+    padding-right: 30px;
+}
+
+.header-text h1 {
+    color: #c00;
+    font-size: 2rem;
+    margin-bottom: 12px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.header-text p {
+    color: white;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.header-image-container, .story-header-image { flex: 1; }
+
+.header-image-container img {
+    width: 100%;
+    max-height: 380px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(200,0,0,0.5);
+    object-fit: cover;
+}
+
+.story-header-image img {
+    max-width: 100%;
+    max-height: 345px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(200,0,0,0.5);
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+.main-content {
+    color: white;
+    padding: 30px;
+    max-width: 1200px;
+    width: calc(100% - 40px);
+    margin: 20px auto 60px;
+    background: rgba(0,0,0,0.7);
+    border-radius: 10px;
+    border: 1px solid #c00;
+    position: relative;
+    z-index: 1;
+}
+
+.weapons-main, .characters-main, .story-main, .locations-main {
+    color: white;
+    padding: 0 20px;
+    max-width: 1200px;
+    width: calc(100% - 40px);
+    margin: 20px auto;
+    background: transparent;
+    border: none;
+    position: relative;
+    z-index: 1;
+    flex: 1;
+}
+
+.story-main { 
+    margin-top: 30px;
+    padding: 0;
+}
+
+.main-content h2 {
+    color: #c00;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.content-row {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.content-column {
+    flex: 1;
+}
+
+.content-column h3 {
+    color: #c00;
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+}
+
+.content-column p, .content-column ul { 
+    line-height: 1.6; 
+    margin-bottom: 12px; 
+}
+
+.content-column ul { 
+    padding-left: 18px; 
+}
+
+.content-column ul li { 
+    margin-bottom: 8px; 
+}
+
+.story-section {
+    background: rgba(0,0,0,0.7);
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    border: 1px solid #c00;
+    max-width: 1200px;
+    width: calc(100% - 40px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.story-section h1, .story-section h2 {
+    color: #c00;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    text-align: left;
+}
+
+.story-section h3 {
+    color: #c00;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    text-align: left;
+}
+
+.story-section p {
+    color: white;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.image-row {
+    display: flex;
+    gap: 15px;
+    margin: 30px 0 25px;
+    justify-content: center;
+}
+
+.image-row img {
+    max-width: 30%;
+    max-height: 300px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(200,0,0,0.5);
+    object-fit: contain;
+}
+
+.center-title {
+    color: #c00;
+    font-size: 1.3rem;
+    margin: 30px 0 12px;
+    text-align: center;
+}
+
+.center-text {
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.section-title h2 {
+    color: #c00;
+    font-size: 1.8rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    background: rgba(0,0,0,0.7);
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid #c00;
+    max-width: 1200px;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+}
+
+.table-row {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.info-table {
+    flex: 1;
+    border-collapse: collapse;
+    background: rgba(0,0,0,0.5);
+    border-radius: 5px;
+    border: 1px solid #c00;
+    width: 100%;
+}
+
+.info-table th {
+    color: #c00;
+    padding: 8px;
+    border-bottom: 1px solid #c00;
+    text-align: center;
+}
+
+.info-table td {
+    padding: 6px;
+    border-bottom: 1px solid #333;
+    color: white;
+}
+
+.table-icon {
+    height: 18px;
+    vertical-align: middle;
+    margin-right: 6px;
+}
+
+.info-table a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.info-table a:hover { 
+    color: #c00; 
+}
+
+.divider {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #c00, transparent);
+    margin: 60px 0;
+    width: 100%;
+}
+
+.weapons-row, .characters-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 60px;
+    background: rgba(0,0,0,0.7);
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #c00;
+    width: calc(100% - 40px);
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+}
+
+.weapon-item, .character-item {
+    text-align: center;
+    flex: 1;
+    margin: 0 10px;
+}
+
+.character-item {
+    border: 1px solid #c00;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 0 5px;
+}
+
+.weapon-details, .character-details { 
+    cursor: pointer; 
+}
+
+.weapon-image {
+    width: 120px;
+    height: 120px;
+    background: white;
+    padding: 15px;
+    border-radius: 5px;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    object-fit: scale-down;
+    display: block;
+    margin: 0 auto;
+}
+
+.character-image {
+    width: 140px;
+    height: 140px;
+    padding: 8px;
+    border-radius: 5px;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    object-fit: scale-down;
+    display: block;
+    margin: 0 auto;
+}
+
+.weapon-description, .character-description {
+    color: white;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.9);
+    background: rgba(0,0,0,0.95);
+    padding: 12px;
+    border-radius: 8px;
+    line-height: 1.4;
+}
+
+.weapon-description { 
+    border: 2px solid #c00; 
+}
+
+.character-description { 
+    border: 2px solid #c5474b; 
+}
+
+.weapon-name, .character-name {
+    color: white;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.character-name { 
+    white-space: nowrap; 
+}
+
+/* СТИЛИ ДЛЯ СТРАНИЦЫ ЛОКАЦИЙ */
+.locations-main {
+    max-width: 1400px;
+}
+
+.locations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+    margin-bottom: 60px;
+}
+
+.location-card {
+    background: rgba(0,0,0,0.7);
+    border: 1px solid #c00;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.location-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(139, 0, 0, 0.4);
+    border-color: #ff0000;
+}
+
+.location-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.location-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.location-card:hover .location-image img {
+    transform: scale(1.05);
+}
+
+.location-info {
+    padding: 20px;
+}
+
+.location-info h3 {
+    color: #c00;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.location-info p {
+    color: #ccc;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.location-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.feature {
+    background: rgba(139, 0, 0, 0.3);
+    color: #ff6b6b;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    border: 1px solid #8B0000;
+}
+
+.full-map-section {
+    margin-top: 60px;
+}
+
+.full-map-container {
+    position: relative;
+    background: rgba(0,0,0,0.7);
+    border: 2px solid #c00;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(139, 0, 0, 0.3);
+}
+
+.full-map-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.full-map-container:hover .full-map-image {
+    transform: scale(1.02);
+}
+
+.map-overlay {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0,0,0,0.8);
+    border: 1px solid #c00;
+    border-radius: 8px;
+    padding: 15px;
+    max-width: 200px;
+}
+
+.map-legend h4 {
+    color: #c00;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.legend-items {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.legend-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+}
+
+.legend-item span:last-child {
+    color: #ccc;
+    font-size: 0.85rem;
+}
+
+/* ФИГУРКИ */
+.hunter-figure, .doll-figure {
+    position: fixed;
+    bottom: 100px;
+    top: auto !important;
+    transform: none;
+    z-index: 998;
+    pointer-events: none;
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    max-width: 100%;
+    max-height: 50vh;
+    width: min(440px, 35vw);
+    height: min(600px, 45vw);
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    opacity: 0.8;
+    filter: drop-shadow(0 0 30px rgba(139, 0, 0, 0.6)) brightness(1.1) contrast(1.2);
+}
+
+.hunter-figure {
+    left: 20px;
+}
+
+.doll-figure {
+    right: 20px;
+}
+
+.hunter-figure img, .doll-figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: all 0.4s ease;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    filter: brightness(1.05) contrast(1.15) saturate(1.1);
+}
+
+.hunter-figure:hover, .doll-figure:hover {
+    opacity: 0.95;
+    transform: scale(1.08);
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 0 40px rgba(255, 0, 0, 0.8)) brightness(1.2) contrast(1.3);
+}
+
+@keyframes smoothAppearFromBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(50px) scale(0.9);
+    }
+    100% {
+        opacity: 0.8;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.hunter-figure {
+    animation: smoothAppearFromBottom 1.2s ease-out forwards;
+    animation-delay: 0.2s;
+}
+
+.doll-figure {
+    animation: smoothAppearFromBottom 1.2s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+/* СТИЛИ ДЛЯ СТРАНИЦЫ БОССОВ - В ЕДИНОМ СТИЛЕ */
+.bosses-page {
+    background: linear-gradient(rgba(10, 10, 10, 0.85), rgba(10, 10, 10, 0.9)), 
+                url('https://i.pinimg.com/originals/da/11/e7/da11e7052e3f56756d85736bd832ff7d.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    min-height: 100vh;
+    color: white;
+}
+
+.bosses-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.bosses-title {
+    text-align: center;
+    color: #c00;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    padding-top: 20px;
+}
+
+.bosses-subtitle {
+    text-align: center;
+    color: #ccc;
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+.boss-filters {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: rgba(0,0,0,0.7);
+    border-radius: 10px;
+    border: 1px solid #c00;
+}
+
+.filter-btn {
+    background: rgba(0, 0, 0, 0.8);
+    color: #ff6b6b;
+    border: 1px solid #c00;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.filter-btn:hover {
+    background: rgba(139, 0, 0, 0.4);
+    border-color: #ff0000;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
+}
+
+.filter-btn.active {
+    background: rgba(139, 0, 0, 0.8);
+    color: white;
+}
+
+/* ТАБЛИЦЫ БОССОВ - В СТИЛЕ СИСТЕМНЫХ ТРЕБОВАНИЙ */
+.boss-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 5px;
+    border: 1px solid #c00;
+}
+
+.boss-table caption {
+    color: #c00;
+    padding: 8px;
+    border-bottom: 1px solid #c00;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.boss-table th {
+    color: #c00;
+    padding: 8px;
+    border-bottom: 1px solid #c00;
+    text-align: center;
+}
+
+.boss-table td {
+    padding: 8px;
+    border-bottom: 1px solid #333;
+    color: white;
+}
+
+.boss-table tr:last-child td {
+    border-bottom: none;
+}
+
+.clickable-boss {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.clickable-boss:hover {
+    background: rgba(139, 0, 0, 0.2);
+}
+
+/* МОДАЛЬНОЕ ОКНО БОССОВ - В ЕДИНОМ СТИЛЕ */
+.boss-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 2000;
+    overflow-y: auto;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 20px;
+}
+
+.boss-modal-content {
+    background: rgba(0, 0, 0, 0.9);
+    border: 1px solid #c00;
+    border-radius: 10px;
+    max-width: 800px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.boss-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+    background: rgba(139, 0, 0, 0.7);
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2001;
+    transition: all 0.3s ease;
+}
+
+.boss-modal-close:hover {
+    background: #c00;
+}
+
+.boss-modal-header {
+    display: flex;
+    gap: 20px;
+    padding: 25px;
+    background: rgba(0,0,0,0.7);
+    border-bottom: 1px solid #c00;
+}
+
+.boss-modal-image {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid #c00;
+    flex-shrink: 0;
+}
+
+.boss-modal-info {
+    flex: 1;
+}
+
+.boss-modal-name {
+    color: #c00;
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.boss-modal-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.boss-type, .boss-location, .boss-health {
+    background: rgba(139, 0, 0, 0.3);
+    padding: 6px 12px;
+    border-radius: 15px;
+    border: 1px solid #c00;
+    font-size: 0.9em;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.boss-health {
+    background: rgba(255, 107, 107, 0.3);
+    color: #ff6b6b;
+}
+
+.boss-modal-body {
+    padding: 25px;
+}
+
+.boss-section {
+    margin-bottom: 25px;
+    padding: 20px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 8px;
+    border: 1px solid #8b0000;
+}
+
+.boss-section h3 {
+    color: #c00;
+    font-size: 1.2em;
+    margin-bottom: 12px;
+}
+
+.boss-description, .boss-lore {
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+.weakness-list, .resistance-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.weakness-item {
+    background: rgba(0, 139, 0, 0.3);
+    color: #6bff6b;
+    padding: 6px 12px;
+    border-radius: 15px;
+    border: 1px solid #008000;
+    font-size: 0.9em;
+}
+
+.resistance-item {
+    background: rgba(139, 0, 0, 0.3);
+    color: #ff6b6b;
+    padding: 6px 12px;
+    border-radius: 15px;
+    border: 1px solid #c00;
+    font-size: 0.9em;
+}
+
+.attack-list, .strategy-list, .reward-list {
+    color: #e0e0e0;
+    padding-left: 18px;
+}
+
+.attack-list li, .strategy-list li, .reward-list li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.strategy-list li {
+    color: #ffd700;
+}
+
+.reward-list li {
+    color: #ff6b6b;
+}
+
+.filter-stats {
+    text-align: center;
+    margin: 15px 0 25px 0;
+    color: #ff6b6b;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.filter-stats .count {
+    color: #fff;
+    background: #c00;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin: 0 5px;
+}
+
+/* АДАПТИВНОСТЬ */
+@media (max-width: 768px) {
+    .boss-table {
+        font-size: 0.9em;
+    }
+    
+    .boss-table th,
+    .boss-table td {
+        padding: 6px 8px;
+    }
+    
+    .bosses-title {
+        font-size: 1.6em;
+    }
+    
+    .filter-btn {
+        padding: 8px 15px;
+        font-size: 0.8em;
+        margin: 3px;
+    }
+    
+    .bosses-container {
+        padding: 10px;
+    }
+    
+    .boss-modal-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .boss-modal-image {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto;
+    }
+    
+    .boss-modal-name {
+        font-size: 1.4em;
+    }
+    
+    .boss-modal-body {
+        padding: 20px;
+    }
+    
+    .boss-section {
+        padding: 15px;
+    }
+}
+
+
+/* ОСНОВНЫЕ СТИЛИ СТРАНИЦЫ */
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("https://sub-game.ru/upload/resize_cache/iblock/736/1200_1200_140cd750bba9870f18aada2478b24840a/ef4yb5lpgz8fkv3nckb13ou4s3pm1ku4.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-x: hidden;
+    padding-top: 70px;
+}
+
+/* ХЕДЕР - ФИКСИРУЕМ ВЫРАВНИВАНИЕ */
+.header-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: rgba(10, 0, 0, 0.95);
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(139, 0, 0, 0.5);
+    border-bottom: 2px solid #8B0000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Красная полоса сверху */
+.header-top::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        #8B0000, 
+        #ff0000, 
+        #8B0000);
+    animation: bloodGlow 2s ease-in-out infinite;
+}
+
+@keyframes bloodGlow {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; }
+}
+
+/* Логотип - левая сторона */
+.logo-container {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.logo { 
+    height: 40px; 
+    margin-right: 15px; 
+}
+
+.title-logo { 
+    height: 25px; 
+}
+
+.logo-link { 
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+/* Меню - правая сторона */
+.menu-container {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.menu-select {
+    font-size: 14px;
+    padding: 8px 16px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #ff6b6b;
+    border: 1px solid #8B0000;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    text-decoration: none;
+    white-space: nowrap;
+    min-width: 140px;
+}
+
+.menu-select:hover {
+    background: rgba(139, 0, 0, 0.4);
+    border-color: #ff0000;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
+}
+
+.menu-select option {
+    background: rgba(0, 0, 0, 0.9);
+    color: #ff6b6b;
+    padding: 8px;
+}
+
+/* АНИМИРОВАННЫЙ ФОН С КРАСНЫМИ КАПЛЯМИ */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(139, 0, 0, 0.3) 0%, transparent 25%),
+        radial-gradient(circle at 80% 70%, rgba(178, 34, 34, 0.25) 0%, transparent 25%),
+        radial-gradient(circle at 40% 80%, rgba(165, 42, 42, 0.2) 0%, transparent 20%);
+    animation: pulseBlood 8s ease-in-out infinite;
+    z-index: -2;
+    pointer-events: none;
+}
+
+@keyframes pulseBlood {
+    0%, 100% { 
+        opacity: 0.6;
+        transform: scale(1);
+    }
+    50% { 
+        opacity: 0.8;
+        transform: scale(1.02);
+    }
+}
+
+/* АНИМИРОВАННЫЕ КРАСНЫЕ КАПЛИ */
+.blood-drops {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.blood-drop {
+    position: absolute;
+    background: linear-gradient(45deg, #8B0000, #FF0000);
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(45deg);
+    animation: fallDown linear forwards;
+    opacity: 0.7;
+    filter: blur(0.5px);
+}
+
+@keyframes fallDown {
+    0% {
+        transform: translateY(-100px) rotate(45deg) scale(0.3);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.7;
+    }
+    90% {
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(100vh) rotate(45deg) scale(1);
+        opacity: 0;
+    }
+}
+
+/* ДВИЖУЩИЙСЯ ТУМАН */
+.fog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(45deg, 
+            rgba(20, 20, 20, 0.1) 0%, 
+            rgba(50, 50, 50, 0.05) 50%, 
+            rgba(20, 20, 20, 0.1) 100%);
+    animation: fogMovement 25s ease-in-out infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes fogMovement {
+    0%, 100% { 
+        transform: translateX(0px) translateY(0px);
+        opacity: 0.3;
+    }
+    25% { 
+        transform: translateX(-15px) translateY(8px);
+        opacity: 0.5;
+    }
+    50% { 
+        transform: translateX(12px) translateY(-12px);
+        opacity: 0.4;
+    }
+    75% { 
+        transform: translateX(15px) translateY(6px);
+        opacity: 0.6;
+    }
+}
+
+/* ФОНОВЫЕ ИЗОБРАЖЕНИЯ ДЛЯ РАЗНЫХ СТРАНИЦ */
+.weapons-page { background-image: url("https://avatars.mds.yandex.net/i?id=dc769dde8312a228dbc3204d9726a785_l-5243585-images-thumbs&n=13"); }
+.characters-page { background-image: url("https://i.pinimg.com/originals/35/34/ee/3534ee08de8ff03746e44c658b4c60d3.jpg"); }
+.story-page { background-image: url("https://wallpapers.com/images/hd/bloodborne-central-yharnam-79r91tt1l513vquv.jpg"); }
+.locations-page { background-image: url("https://i.pinimg.com/originals/34/37/07/34370765e59282b617dd1fa13aed82d7.jpg"); }
+.bosses-page { 
+    background: linear-gradient(rgba(10, 10, 10, 0.85), rgba(10, 10, 10, 0.9)), 
+                url('https://i.pinimg.com/originals/da/11/e7/da11e7052e3f56756d85736bd832ff7d.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+/* ЦЕНТРАЛЬНОЕ ИЗОБРАЖЕНИЕ НА ГЛАВНОЙ СТРАНИЦЕ */
+.header-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    padding: 20px;
+}
+
+.header-image img { max-width: 60%; height: auto; }
+
+/* ШАПКИ СТРАНИЦ */
+.main-header, .weapons-header, .characters-header, .story-header, .locations-header, .bosses-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/* КОНТЕЙНЕРЫ ШАПОК С ФОНОМ И РАМКОЙ */
+.header-content {
+    display: flex;
+    align-items: center;
+    background: rgba(0,0,0,0.7);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #c00;
+    margin: 0 auto;
+    max-width: 1200px;
+    width: calc(100% - 40px);
+}
+
+.story-header-content {
+    display: flex;
+    align-items: center;
+    background: rgba(0,0,0,0.7);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #c00;
+    margin: 0 auto 40px auto;
+    max-width: 1200px;
+    width: calc(100% - 40px);
+}
+
+/* ТЕКСТОВАЯ ЧАСТЬ ШАПКИ */
+.header-text {
+    flex: 1;
+    padding-right: 30px;
+}
+
+.header-text h1 {
+    color: #c00;
+    font-size: 2rem;
+    margin-bottom: 12px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.header-text p {
+    color: white;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+/* ИЗОБРАЖЕНИЯ В ШАПКАХ */
+.header-image-container, .story-header-image { flex: 1; }
+
+.header-image-container img {
+    width: 100%;
+    max-height: 380px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(200,0,0,0.5);
+    object-fit: cover;
+}
+
+.story-header-image img {
+    max-width: 100%;
+    max-height: 345px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(200,0,0,0.5);
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+/* ОСНОВНОЙ КОНТЕНТ */
+.main-content {
+    color: white;
+    padding: 30px;
+    max-width: 1200px;
+    width: calc(100% - 40px);
+    margin: 20px auto 60px;
+    background: rgba(0,0,0,0.7);
+    border-radius: 10px;
+    border: 1px solid #c00;
+    position: relative;
+    z-index: 1;
+}
+
+.weapons-main, .characters-main, .story-main, .locations-main, .bosses-main {
+    color: white;
+    padding: 0 20px;
+    max-width: 1200px;
+    width: calc(100% - 40px);
+    margin: 20px auto;
+    background: transparent;
+    border: none;
+    position: relative;
+    z-index: 1;
+    flex: 1;
+}
+
+.story-main { 
+    margin-top: 30px;
+    padding: 0;
+}
+
+/* ЗАГОЛОВКИ */
+.main-content h2 {
+    color: #c00;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* СТРОКИ С КОНТЕНТОМ */
+.content-row {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.content-column {
+    flex: 1;
+}
+
+.content-column h3 {
+    color: #c00;
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+}
+
+.content-column p, .content-column ul { line-height: 1.6; margin-bottom: 12px; }
+.content-column ul { padding-left: 18px; }
+.content-column ul li { margin-bottom: 8px; }
+
+/* СЕКЦИИ СТРАНИЦЫ СЮЖЕТА */
+.story-section {
+    background: rgba(0,0,0,0.7);
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    border: 1px solid #c00;
+    max-width: 1200px;
+    width: calc(100% - 40px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.story-section h1, .story-section h2 {
+    color: #c00;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    text-align: left;
+}
+
+.story-section h3 {
+    color: #c00;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    text-align: left;
+}
+
+.story-section p {
+    color: white;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* СТРОКА С ИЗОБРАЖЕНИЯМИ */
+.image-row {
+    display: flex;
+    gap: 15px;
+    margin: 30px 0 25px;
+    justify-content: center;
+}
+
+.image-row img {
+    max-width: 30%;
+    max-height: 300px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(200,0,0,0.5);
+    object-fit: contain;
+}
+
+/* ЦЕНТРИРОВАННЫЕ ЗАГОЛОВКИ И ТЕКСТ */
+.center-title {
+    color: #c00;
+    font-size: 1.3rem;
+    margin: 30px 0 12px;
+    text-align: center;
+}
+
+.center-text {
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* ЗАГОЛОВКИ СЕКЦИЙ С ФОНОМ */
+.section-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.section-title h2 {
+    color: #c00;
+    font-size: 1.8rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    background: rgba(0,0,0,0.7);
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid #c00;
+    max-width: 1200px;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+}
+
+/* СТРОКА С ТАБЛИЦАМИ */
+.table-row {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+/* ТАБЛИЦЫ С ИНФОРМАЦИЕЙ */
+.info-table {
+    flex: 1;
+    border-collapse: collapse;
+    background: rgba(0,0,0,0.5);
+    border-radius: 5px;
+    border: 1px solid #c00;
+    width: 100%;
+}
+
+.info-table th {
+    color: #c00;
+    padding: 8px;
+    border-bottom: 1px solid #c00;
+    text-align: center;
+}
+
+.info-table td {
+    padding: 6px;
+    border-bottom: 1px solid #333;
+    color: white;
+}
+
+.table-icon {
+    height: 18px;
+    vertical-align: middle;
+    margin-right: 6px;
+}
+
+.info-table a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.info-table a:hover { color: #c00; }
+
+/* РАЗДЕЛИТЕЛЬНАЯ ЛИНИЯ */
+.divider {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #c00, transparent);
+    margin: 60px 0;
+    width: 100%;
+}
+
+/* СТРОКИ С ЭЛЕМЕНТАМИ */
+.weapons-row, .characters-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 60px;
+    background: rgba(0,0,0,0.7);
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #c00;
+    width: calc(100% - 40px);
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+}
+
+/* ОТДЕЛЬНЫЕ ЭЛЕМЕНТЫ */
+.weapon-item, .character-item {
+    text-align: center;
+    flex: 1;
+    margin: 0 10px;
+}
+
+.character-item {
+    border: 1px solid #c00;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 0 5px;
+}
+
+.weapon-details, .character-details { cursor: pointer; }
+
+/* ИЗОБРАЖЕНИЯ */
+.weapon-image {
+    width: 120px;
+    height: 120px;
+    background: white;
+    padding: 15px;
+    border-radius: 5px;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    object-fit: scale-down;
+    display: block;
+    margin: 0 auto;
+}
+
+.character-image {
+    width: 140px;
+    height: 140px;
+    padding: 8px;
+    border-radius: 5px;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    object-fit: scale-down;
+    display: block;
+    margin: 0 auto;
+}
+
+/* ОПИСАНИЯ */
+.weapon-description, .character-description {
+    color: white;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.9);
+    background: rgba(0,0,0,0.95);
+    padding: 12px;
+    border-radius: 8px;
+    line-height: 1.4;
+}
+
+.weapon-description { border: 2px solid #c00; }
+.character-description { border: 2px solid #c5474b; }
+
+/* НАЗВАНИЯ */
+.weapon-name, .character-name {
+    color: white;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.character-name { white-space: nowrap; }
+
+/* СТИЛИ ДЛЯ СТРАНИЦЫ ЛОКАЦИЙ */
+.locations-main {
+    max-width: 1400px;
+}
+
+.locations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+    margin-bottom: 60px;
+}
+
+.location-card {
+    background: rgba(0,0,0,0.7);
+    border: 1px solid #c00;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.location-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(139, 0, 0, 0.4);
+    border-color: #ff0000;
+}
+
+.location-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.location-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.location-card:hover .location-image img {
+    transform: scale(1.05);
+}
+
+.location-info {
+    padding: 20px;
+}
+
+.location-info h3 {
+    color: #c00;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.location-info p {
+    color: #ccc;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.location-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.feature {
+    background: rgba(139, 0, 0, 0.3);
+    color: #ff6b6b;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    border: 1px solid #8B0000;
+}
+
+/* Секция с общей картой */
+.full-map-section {
+    margin-top: 60px;
+}
+
+.full-map-container {
+    position: relative;
+    background: rgba(0,0,0,0.7);
+    border: 2px solid #c00;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(139, 0, 0, 0.3);
+}
+
+.full-map-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.full-map-container:hover .full-map-image {
+    transform: scale(1.02);
+}
+
+.map-overlay {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0,0,0,0.8);
+    border: 1px solid #c00;
+    border-radius: 8px;
+    padding: 15px;
+    max-width: 200px;
+}
+
+.map-legend h4 {
+    color: #c00;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.legend-items {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.legend-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+}
+
+.legend-item span:last-child {
+    color: #ccc;
+    font-size: 0.85rem;
+}
+
+/* СТИЛИ ДЛЯ СТРАНИЦЫ БОССОВ */
+.bosses-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.bosses-title {
+    text-align: center;
+    color: #ff6b6b;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    padding-top: 20px;
+}
+
+.bosses-subtitle {
+    text-align: center;
+    color: #ccc;
+    font-size: 1.2em;
+    margin-bottom: 40px;
+}
+
+/* ФИЛЬТРЫ БОССОВ */
+.boss-filters {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: rgba(26, 10, 10, 0.8);
+    border-radius: 10px;
+    border: 1px solid #8b0000;
+}
+
+.filter-btn {
+    background: #2a0f0f;
+    color: #e0e0e0;
+    border: 1px solid #8b0000;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    font-size: 0.9em;
+}
+
+.filter-btn:hover {
+    background: #3a1f1f;
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background: #8b0000;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(139, 0, 0, 0.4);
+}
+
+/* ТАБЛИЦЫ БОССОВ */
+.boss-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+    background: rgba(26, 10, 10, 0.9);
+    border: 2px solid #8b0000;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(139, 0, 0, 0.3);
+    transition: all 0.4s ease;
+}
+
+.boss-table caption {
+    caption-side: top;
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #8b0000, #ff4444);
+    color: white;
+    font-size: 1.4em;
+    font-weight: bold;
+    border-bottom: 2px solid #8b0000;
+}
+
+.boss-table th {
+    background: rgba(139, 0, 0, 0.7);
+    color: #fff;
+    padding: 15px;
+    text-align: left;
+    font-weight: bold;
+    border-bottom: 2px solid #ff6b6b;
+}
+
+.boss-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.boss-table tr:hover td {
+    background: rgba(255, 107, 107, 0.1);
+    transform: translateX(5px);
+}
+
+.boss-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* КЛИКАБЕЛЬНЫЕ СТРОКИ БОССОВ */
+.clickable-boss {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.clickable-boss:hover {
+    background: rgba(255, 107, 107, 0.1) !important;
+    transform: translateX(5px);
+}
+
+/* МОДАЛЬНОЕ ОКНО БОССОВ */
+.boss-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 2000;
+    overflow-y: auto;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 20px;
+}
+
+.boss-modal-content {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a1a1a 100%);
+    border: 3px solid #8b0000;
+    border-radius: 15px;
+    max-width: 800px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: modalAppear 0.3s ease;
+}
+
+@keyframes modalAppear {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.boss-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #fff;
+    font-size: 35px;
+    cursor: pointer;
+    background: rgba(139, 0, 0, 0.7);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2001;
+    transition: all 0.3s ease;
+}
+
+.boss-modal-close:hover {
+    background: #8b0000;
+    transform: rotate(90deg);
+}
+
+.boss-modal-header {
+    display: flex;
+    gap: 25px;
+    padding: 30px;
+    background: linear-gradient(135deg, rgba(139, 0, 0, 0.2), rgba(255, 107, 107, 0.1));
+    border-bottom: 2px solid #8b0000;
+}
+
+.boss-modal-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #8b0000;
+    flex-shrink: 0;
+}
+
+.boss-modal-info {
+    flex: 1;
+}
+
+.boss-modal-name {
+    color: #ff6b6b;
+    font-size: 2em;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.boss-modal-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.boss-type, .boss-location, .boss-health {
+    background: rgba(139, 0, 0, 0.3);
+    padding: 6px 12px;
+    border-radius: 15px;
+    border: 1px solid #8b0000;
+    font-size: 0.9em;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.boss-health {
+    background: rgba(255, 107, 107, 0.3);
+    color: #ff6b6b;
+}
+
+.boss-modal-body {
+    padding: 30px;
+}
+
+.boss-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: rgba(42, 15, 15, 0.3);
+    border-radius: 10px;
+    border-left: 4px solid #8b0000;
+}
+
+.boss-section h3 {
+    color: #ff6b6b;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.boss-description, .boss-lore {
+    color: #e0e0e0;
+    line-height: 1.6;
+    font-size: 1.1em;
+}
+
+.weakness-list, .resistance-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.weakness-item {
+    background: rgba(0, 139, 0, 0.3);
+    color: #6bff6b;
+    padding: 6px 12px;
+    border-radius: 15px;
+    border: 1px solid #008000;
+    font-size: 0.9em;
+}
+
+.resistance-item {
+    background: rgba(139, 0, 0, 0.3);
+    color: #ff6b6b;
+    padding: 6px 12px;
+    border-radius: 15px;
+    border: 1px solid #8b0000;
+    font-size: 0.9em;
+}
+
+.attack-list, .strategy-list, .reward-list {
+    color: #e0e0e0;
+    padding-left: 20px;
+}
+
+.attack-list li, .strategy-list li, .reward-list li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.strategy-list li {
+    color: #ffd700;
+}
+
+.reward-list li {
+    color: #ff6b6b;
+}
+
+/* СТАТИСТИКА БОССОВ */
+.filter-stats {
+    text-align: center;
+    margin: 15px 0 25px 0;
+    color: #ff6b6b;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.filter-stats .count {
+    color: #fff;
+    background: #8b0000;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin: 0 5px;
+}
+
+/* ПОДВАЛ СТРАНИЦЫ */
+.page-footer {
+    background: rgba(0,0,0,0.8);
+    padding: 15px;
+    border: 2px solid #c00;
+    width: 100%; 
+    margin-top: auto; 
+    box-sizing: border-box; 
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px; 
+}
+
+.footer-info {
+    color: white;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.footer-logo { height: 35px; }
+
+/* ОБЩИЕ СТИЛИ ДЛЯ ФИГУРОК НА ВСЕХ СТРАНИЦАХ */
+.hunter-figure, .doll-figure {
+    position: fixed !important;
+    bottom: 100px !important;
+    top: auto !important;
+    transform: none !important;
+    z-index: 998 !important;
+    pointer-events: none !important;
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    max-width: 100% !important;
+    max-height: 50vh !important;
+    width: min(440px, 35vw) !important;
+    height: min(600px, 45vw) !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    opacity: 0.8 !important;
+    filter: drop-shadow(0 0 30px rgba(139, 0, 0, 0.6)) brightness(1.1) contrast(1.2) !important;
+}
+
+.hunter-figure { 
+    left: 20px !important; 
+}
+
+.doll-figure { 
+    right: 20px !important; 
+}
+
+.hunter-figure img, .doll-figure img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    transition: all 0.4s ease !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    filter: brightness(1.05) contrast(1.15) saturate(1.1) !important;
+}
+
+.hunter-figure:hover, .doll-figure:hover {
+    opacity: 0.95 !important;
+    transform: scale(1.08) !important;
+    transition: all 0.3s ease !important;
+    filter: drop-shadow(0 0 40px rgba(255, 0, 0, 0.8)) brightness(1.2) contrast(1.3) !important;
+}
+
+/* Анимация появления */
+.hunter-figure { 
+    animation: smoothAppearFromBottom 1.2s ease-out forwards; 
+    animation-delay: 0.2s; 
+}
+
+.doll-figure { 
+    animation: smoothAppearFromBottom 1.2s ease-out forwards; 
+    animation-delay: 0.4s; 
+}
+
+@keyframes smoothAppearFromBottom {
+    0% { 
+        opacity: 0; 
+        transform: translateY(50px) scale(0.9); 
+    }
+    100% { 
+        opacity: 0.8; 
+        transform: translateY(0) scale(1); 
+    }
+}
+/* Стили для секции системных требований эмулятора - В СТИЛЕ ОСТАЛЬНЫХ ТАБЛИЦ */
+.sys-req-section {
+    max-width: 1200px;
+    margin: 60px auto 40px;
+    padding: 30px;
+    background: rgba(0,0,0,0.7);
+    border-radius: 10px;
+    border: 1px solid #c00;
+    position: relative;
+    z-index: 1;
+}
+
+.sys-req-title {
+    text-align: center;
+    color: #c00;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.req-tables-wrapper {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+/* Таблицы в том же стиле, что и .info-table */
+.req-table {
+    flex: 1;
+    border-collapse: collapse;
+    background: rgba(0,0,0,0.5);
+    border-radius: 5px;
+    border: 1px solid #c00;
+    width: 100%;
+    min-width: 300px;
+}
+
+.req-table caption {
+    color: #c00;
+    padding: 8px;
+    border-bottom: 1px solid #c00;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.req-table td {
+    padding: 8px;
+    border-bottom: 1px solid #333;
+    color: white;
+}
+
+.req-table tr:last-child td {
+    border-bottom: none;
+}
+
+.req-table td:first-child {
+    color: #ff6b6b;
+    font-weight: bold;
+    width: 35%;
+}
+
+.req-table td:last-child {
+    width: 65%;
+}
+
+/* Стили для настроек эмулятора */
+.emulator-settings {
+    margin: 40px 0;
+    padding: 20px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 8px;
+    border: 1px solid #c00;
+}
+
+.emulator-settings h3 {
+    color: #c00;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.settings-grid {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.setting-category {
+    flex: 1;
+    min-width: 300px;
+}
+
+.setting-category h4 {
+    color: #c00;
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #c00;
+    padding-bottom: 5px;
+}
+
+.setting-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.setting-category li {
+    color: white;
+    margin-bottom: 8px;
+    padding-left: 15px;
+    position: relative;
+    line-height: 1.4;
+}
+
+.setting-category li:before {
+    content: "•";
+    color: #c00;
+    position: absolute;
+    left: 0;
+}
+
+.setting-category strong {
+    color: #ff6b6b;
+}
+
+/* Стили для блока предупреждения */
+.warning-block {
+    padding: 20px;
+    background: rgba(139, 0, 0, 0.2);
+    border-radius: 8px;
+    border: 1px solid #c00;
+    margin-top: 30px;
+}
+
+.warning-block h3 {
+    color: #ff4444;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.warning-block p {
+    color: white;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.insight-text {
+    color: #8a2be2;
+    font-style: italic;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .req-tables-wrapper {
+        flex-direction: column;
+    }
+    
+    .settings-grid {
+        flex-direction: column;
+    }
+    
+    .req-table, .setting-category {
+        min-width: 100%;
+    }
+}
+/* Стили для таблиц системных требований */
+.req-table th {
+    color: #c00;
+    padding: 8px;
+    border-bottom: 1px solid #c00;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+/* ОБНОВЛЕННЫЕ СТИЛИ ДЛЯ ВСЕХ ТАБЛИЦ БОССОВ */
+.boss-table,
+.boss-table.main,
+.boss-table.optional, 
+.boss-table.dlc,
+.boss-table.chalice {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    background: rgba(0,0,0,0.5) !important;
+    border-radius: 5px !important;
+    border: 1px solid #8b0000 !important; /* Более темный красный */
+}
+
+.boss-table caption,
+.boss-table.main caption,
+.boss-table.optional caption,
+.boss-table.dlc caption,
+.boss-table.chalice caption {
+    color: #8b0000 !important; /* Более темный красный */
+    padding: 8px !important;
+    border-bottom: 1px solid #8b0000 !important; /* Более темный красный */
+    text-align: center !important;
+    font-weight: bold !important;
+    font-size: 1.1em !important;
+    background: rgba(0,0,0,0.3) !important; /* Добавил фон */
+}
+
+.boss-table th,
+.boss-table.main th,
+.boss-table.optional th,
+.boss-table.dlc th,
+.boss-table.chalice th {
+    color: #8b0000 !important; /* Более темный красный */
+    padding: 8px !important;
+    border-bottom: 1px solid #8b0000 !important; /* Более темный красный */
+    text-align: center !important;
+    background: rgba(0,0,0,0.3) !important; /* Добавил фон */
+}
+
+.boss-table td,
+.boss-table.main td,
+.boss-table.optional td,
+.boss-table.dlc td,
+.boss-table.chalice td {
+    padding: 8px !important;
+    border-bottom: 1px solid #333 !important;
+    color: white !important;
+}
+
+/* ДОБАВИТЬ ЭТОТ КОД ДЛЯ ВСПЛЫВАЮЩЕГО ОКНА */
+.boss-modal {
+    display: none !important;
+}
+
+.boss-modal[style*="display: flex"] {
+    display: flex !important;
+}
+
+
+/* СТИЛИ ДЛЯ ВСПЛЫВАЮЩЕГО ОКНА БОССА */
+.boss-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 10000;
+    overflow-y: auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.boss-modal-content {
+    background: rgba(0, 0, 0, 0.9);
+    border: 1px solid #8b0000;
+    border-radius: 10px;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    color: white;
+}
+
+.boss-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    background: rgba(139, 0, 0, 0.7);
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10001;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.boss-modal-close:hover {
+    background: #8b0000;
+}
+
+.boss-modal-header {
+    display: flex;
+    gap: 20px;
+    padding: 25px;
+    background: rgba(0,0,0,0.7);
+    border-bottom: 1px solid #8b0000;
+    align-items: center;
+}
+
+.boss-modal-image {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid #8b0000;
+    flex-shrink: 0;
+}
+
+.boss-modal-info {
+    flex: 1;
+}
+
+.boss-modal-name {
+    color: #8b0000;
+    margin: 0 0 15px 0;
+    font-size: 28px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.boss-modal-meta {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.boss-type, .boss-location, .boss-health {
+    background: rgba(139, 0, 0, 0.3);
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: 1px solid #8b0000;
+    font-size: 14px;
+}
+
+.boss-health {
+    background: rgba(255, 107, 107, 0.3);
+    color: #ff6b6b;
+}
+
+.boss-modal-body {
+    padding: 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.boss-section {
+    background: rgba(0,0,0,0.5);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #8b0000;
+}
+
+.boss-section h3 {
+    color: #8b0000;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 18px;
+    border-bottom: 1px solid #8b0000;
+    padding-bottom: 8px;
+}
+
+.boss-description, .boss-lore {
+    color: #e0e0e0;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.weakness-list, .resistance-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.weakness-item {
+    background: rgba(0, 139, 0, 0.3);
+    color: #6bff6b;
+    padding: 6px 12px;
+    border-radius: 15px;
+    border: 1px solid #008000;
+    font-size: 14px;
+}
+
+.resistance-item {
+    background: rgba(139, 0, 0, 0.3);
+    color: #ff6b6b;
+    padding: 6px 12px;
+    border-radius: 15px;
+    border: 1px solid #8b0000;
+    font-size: 14px;
+}
+
+.attack-list, .strategy-list, .reward-list {
+    margin: 0;
+    padding-left: 20px;
+    color: #e0e0e0;
+}
+
+.attack-list li, .strategy-list li, .reward-list li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.strategy-list li {
+    color: #ffd700;
+}
+
+.reward-list li {
+    color: #ff6b6b;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .boss-modal-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .boss-modal-image {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .boss-modal-body {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+    
+    .boss-section {
+        padding: 15px;
+    }
+}
+
+
+
+/* СТИЛИ КАРУСЕЛИ */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 2px solid #8b0000;
+    box-shadow: 0 0 30px rgba(139, 0, 0, 0.5);
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8) contrast(1.1);
+}
+
+/* Кнопки навигации */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(139, 0, 0, 0.7);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.carousel-btn:hover {
+    background: #8b0000;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-prev {
+    left: 10px;
+}
+
+.carousel-next {
+    right: 10px;
+}
+
+/* Индикаторы */
+.carousel-indicators {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator.active {
+    background: #8b0000;
+    transform: scale(1.2);
+}
+
+.indicator:hover {
+    background: #ff6b6b;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .carousel-container {
+        height: 250px;
+    }
+    
+    .carousel-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
+}
